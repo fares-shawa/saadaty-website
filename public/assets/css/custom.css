@@ -1,0 +1,71 @@
+.logo{
+ width: 100px;
+ height: 80px;
+}
+
+.banner-section-two{
+    background-image:url('/assets/images/background/saadaty_banner.png');
+}
+
+.sub-text{
+    font-size: 18px;
+    color: white;
+}
+
+.color-primary{
+    color: #F2B100;
+}
+
+.select2-container--default .select2-selection--single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 13px 2.5rem 1rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(11, 11, 11, 0.15);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* text centered */
+.select2-container--default .select2-selection__rendered {
+    text-align: center;
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* hide default arrow */
+.select2-container--default .select2-selection__arrow b {
+    display: none;
+}
+
+/* custom thin gold arrow */
+.select2-container--default .select2-selection__arrow::after {
+    content: '';
+    position: absolute;
+    right: 1.5rem;
+    top: 100%;
+    width: 0.6rem;
+    height: 0.35rem;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid #F2B100;
+    border-bottom: 2px solid #F2B100;
+    pointer-events: none;
+}
+
+/* focus effect */
+.select2-container--default.select2-container--focus .select2-selection--single {
+    border-color: #F2B100;
+    box-shadow: 0 0 0 .2rem rgba(242,177,0,.25);
+    outline: none;
+}
+
+/* dropdown list style */
+.select2-container--default .select2-results__option {
+    text-align: center;
+    padding: .75rem;
+}

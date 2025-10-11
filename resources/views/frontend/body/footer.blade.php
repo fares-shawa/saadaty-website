@@ -1,15 +1,12 @@
 <footer class="footer-two">
     <div class="auto-container">
-        <!--Widgets Section-->
         <div class="footer-two-widgets">
             <div class="row clearfix">
-
-                <!-- العمود الأول -->
                 <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-two-widget logo-widget">
                         <div class="footer-two_logo mb-3">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('assets/images/logo-saadaty.png') }}" width="100" height="100" alt="سعادتي">
+                                <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}" alt="سعادتي">
                             </a>
                         </div>
                         <div class="footer-two_text">
@@ -17,9 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="big-column col-lg-1 col-md-12 col-sm-12">
-                </div>
-                <!-- العمود الثاني -->
+                <div class="big-column col-lg-1 col-md-12 col-sm-12"></div>
                 <div class="big-column col-lg-3 col-md-12 col-sm-12">
                     <div class="footer-two-widget links-widget">
                         <h4 class="footer-two_title">الصفحات</h4>
@@ -31,8 +26,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- العمود الثالث -->
                 <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-widget news-widget">
                         <h4 class="footer-two_title">معلومـــات</h4>
@@ -47,20 +40,16 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="row clearfix">
                 <!-- Column -->
                 <div class="column col-lg-6 col-md-12 col-sm-12">
                     <div class="copyright">
-                        &copy; حقوق النشر ©2025 نور_تك. جميع الحقوق محفوظة
+                        &copy;2025 تطبيق سعادتي
                     </div>
                 </div>
                 <!-- Column -->
@@ -72,6 +61,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div>  
 </footer>

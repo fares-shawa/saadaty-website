@@ -252,7 +252,7 @@
                     <div class="gallery-main">
                         <!-- الصورة الرئيسية تبقى كما هي -->
                         <img id="gallery-trigger" src="{{ $store['main_image'] }}" alt="Main Image"
-                            style="cursor:pointer; max-width:100%;">
+                            style="cursor:pointer; max-width:100%;max-height:600px;">
 
                         <!-- زر عرض الكل -->
                         <a href="#" id="open-gallery" class="see-all-btn">
@@ -325,7 +325,7 @@
 
                 <!-- الخريطة -->
                 <div class="col-lg-5">
-                    <h3 class="section-title">الموقع الجيوغرافي</h3>
+                    <h3 class="section-title">موقعنا الجغرافي</h3>
                     <div class="map-card mb-3">
                         <iframe src="https://www.google.com/maps?q={{$store['location']}}&output=embed" width="100%" height="250" style="border:0;"></iframe>
                     </div>
