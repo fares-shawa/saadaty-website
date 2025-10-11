@@ -62,7 +62,7 @@
 
     .gallery-thumbs img, .gallery-thumbs video {
         width: 100%;
-        height: 100%;
+        height: 300px;
         border-radius: 15px;
         object-fit: cover;
     }
@@ -267,7 +267,7 @@
                             <div class="d-flex justify-content-center align-items-center gap-4">
                                 <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">السعر</p>
                                 <div class="feature-block_one-icon">
-                                    <i class="flaticon-money-bag"></i>
+                                    <img src="{{ asset('assets/icons/price.png') }}" style="width:30px;">
                                 </div>
                             </div>
                             <p class="black-color mb-0 fw-semibold" style="font-size: 20px;">من {{ $store['price_from'] }} إلى {{ $store['price_to'] }}</p>
@@ -276,28 +276,31 @@
                             <div class="d-flex justify-content-center align-items-center gap-4">
                                 <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">خبرة السنوات</p>
                                 <div class="feature-block_one-icon">
-                                    <i class="flaticon-digital-learning"></i>
+                                    <img src="{{ asset('assets/icons/experience.png') }}" style="width:30px;">
                                 </div>
                             </div>
-                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['experience'] }} +</p>
+                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['experience'] }}</p>
                         </div>
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
                                 <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">العربون</p>
                                 <div class="feature-block_one-icon">
-                                    <i class="flaticon-policy"></i>
+                                    <img src="{{ asset('assets/icons/downpayment.png') }}" style="width:30px;">
                                 </div>
                             </div>
-                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['forward'] }}</p>
+                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">
+                                @if($store['forward'] == 'no')لا @endif
+                                @if($store['forward'] == 'yes')نعم @endif
+                            </p>
                         </div>
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
                                 <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">الفريق</p>
                                 <div class="feature-block_one-icon">
-                                    <i class="flaticon-conversation-1"></i>
+                                    <img src="{{ asset('assets/icons/team.png') }}" style="width:30px;">
                                 </div>
                             </div>
-                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['team_size'] }} +</p>
+                            <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['team_size'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -335,7 +338,9 @@
                 <div class="col-md-6 text-center">
                 <h4 class="fw-bold mb-3">بيانات الاتصال</h4>
                 <p style="font-size: 20px;"> {{ $store['user']['name'] }}<i class="fa fa-user contact-icon"></i></p>
+                @if($store['email'] != null)
                 <p style="font-size: 20px;"> {{ $store['email'] }} <i class="fa fa-envelope contact-icon"></i></p>
+                @endif
                 <p style="font-size: 20px;"><span id="mobile-placeholder" style="cursor:pointer; text-decoration:underline;">
                         اضغط هنا
                     </span><i class="fa fa-phone contact-icon"></i>
@@ -354,6 +359,9 @@
                         </a>
                         <a href="{{ $store['instagram'] }}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="{{ $store['snapchat'] }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </div>
                 </div>

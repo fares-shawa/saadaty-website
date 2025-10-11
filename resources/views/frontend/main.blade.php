@@ -92,12 +92,9 @@
 <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
 <script src="{{ asset('assets/js/nav-tool.js') }}"></script>
 <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-<script src="{{ asset('assets/js/color-settings.js') }}"></script>
 <script src="{{ asset('assets/js/script.js') }}"></script>
 
 @yield('scripts')
 
 </body>
-
-<!-- Mirrored from html.themerange.net/conat/conat/index-2-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Sep 2025 10:57:19 GMT -->
 </html>
