@@ -225,7 +225,7 @@
             <div class="sec-title title-anim">
                 <h2 class="sec-title_heading">{{ $store['name'] }}</h2>
                 <div class="sec-title_title">
-                    {{ $store['city'] }}, {{ $store['district'] }}
+                    جدة, {{ $store['district'] }}
                     <span style="color: #F2B100"><i class="icon fa fa-map-marker"></i></span>
                 </div>
             </div>
@@ -322,13 +322,13 @@
 
                 <!-- الخريطة -->
                 <div class="col-lg-5">
-                    <h3 class="section-title">استكشف المنطقة</h3>
+                    <h3 class="section-title">الموقع الجيوغرافي</h3>
                     <div class="map-card mb-3">
-                        <iframe src="https://www.google.com/maps?q=Jeddah%20Corniche&output=embed" width="100%" height="250" style="border:0;"></iframe>
+                        <iframe src="{{ $store['location'] }}" width="100%" height="250" style="border:0;"></iframe>
                     </div>
                     <div class="text-center border p-3 shadow-sm">
-                        <p class="mb-1">{{ $store['city'] }}, {{ $store['district'] }}</p>
-                        <a href="#" class="map-link" style="color: #F2B100;"><i class="fa fa-location-dot"></i> عرض على الخريطة</a>
+                        <p class="mb-1">جدة , {{ $store['district'] }}</p>
+                        <a href="{{ $store['location'] }}" class="map-link" style="color: #F2B100;"><i class="fa fa-location-dot"></i> عرض على الخريطة</a>
                     </div>
                 </div>
             </div>
