@@ -43,23 +43,4 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
-                    <div class="copyright">
-                        &copy;2025 تطبيق سعادتي
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
-                    <ul class="footer-bottom-nav">
-                        <li><a href="#">الشروط والأحكام</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>  
 </footer>

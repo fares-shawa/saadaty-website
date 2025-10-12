@@ -1,6 +1,14 @@
 @extends('frontend.main')
+@section('head')
+<style>
+.footer-two{
+    direction: rtl;
+    text-align: right;
+}
+</style>
+@endsection
 @section('content')
-<section class="banner-section-two">
+<section class="banner-section-two" dir="rtl">
     <div class="auto-container">
 		<div class="text-center mb-5">
 		    <h2>نحو ليلة عمر خالدة … سعادتي ترافقك في كل التفاصيل</h2>
@@ -16,7 +24,7 @@
 	</div>
 </section>
 
-<section class="about-two" id="about">
+<section class="about-two" id="about" dir="rtl">
     <div class="auto-container">
 	    <div class="row clearfix">
 		    <div class="about-two_content-column col-lg-6 col-md-12 col-sm-12 mt-5">
@@ -51,7 +59,7 @@
     </div>
 </section>
 
-<section class="services-one" id="mission">
+<section class="services-one" id="mission" dir="rtl">
     <div class="auto-container">
 	    <div class="sec-title centered title-anim">
 		    <h2 class="sec-title_heading">الرؤيــة والمهمــة</h2>
@@ -82,7 +90,7 @@
 </section>
 
 <div class="centered-border"></div>
-<section class="speakers-one" id="categories">
+<section class="speakers-one" id="categories" dir="rtl">
     <div class="auto-container">
 	    <div class="sec-title title-anim centered">
 		    <h2 class="sec-title_heading">خدماتنــا الاستثنــائية</h2>
@@ -117,7 +125,7 @@
 </section>
 
 <div class="centered-border"></div>
-<div class="container">
+<div class="container" dir="rtl">
     <div class="row">
         <div class="col-md-6">
             <section class="news-two" id="contact">
@@ -252,7 +260,7 @@
     </div>
 </div>
 
-<section class="clients-two">
+<section class="clients-two" dir="rtl">
     <div class="auto-container">
         <div class="sec-title title-anim centered">
             <h2 class="sec-title_heading">تابعـــونا</h2>
