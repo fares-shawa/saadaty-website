@@ -1,13 +1,12 @@
-/* Conat Events Business HTML Template */
 
 @media only screen and (max-width: 1800px){
-	
-	
-	
+
+
+
 }
 
 @media only screen and (max-width: 1400px){
-	
+
 	.about-two_image img{
 		max-width: 100%;
 	}
@@ -15,7 +14,7 @@
 	.about-two_image-inner{
 		padding-left: var(--padding-zero);
 	}
-	
+
 }
 
 @media only screen and (max-width: 1340px){
@@ -28,11 +27,11 @@
 		right: 0px;
 		bottom: 10px;
 	}
-	
+
 }
 
 @media only screen and (max-width: 1240px){
-	
+
 	.about-one_pattern-two,
 	.about-one_pattern-four{
 		display: none;
@@ -50,11 +49,11 @@
 	.about-one_image{
 		margin-left: var(--margin-zero);
 	}
-	
+
 }
 
 @media only screen and (max-width: 1140px){
-	
+
 	h2{
 		font-size:var(--font-40);
 	}
@@ -71,7 +70,7 @@
 	.slider-two_timer{
 		display: none;
 	}
-	
+
 	.main-header .outer-box .nav-btn{
 		width:auto;
 		margin-left:var(--margin-left-20);
@@ -136,7 +135,7 @@
 	.slider-three .time-countdown .counter-column{
 		font-size: var(--font-16);
 	}
-	
+
 	.contact-page-section-two .info-column .inner-column{
 		margin-left: var(--margin-zero);
 	}
@@ -157,26 +156,26 @@
 }
 
 @media only screen and (min-width: 768px){
-	
-	
-	
+
+
+
 }
 
 @media only screen and (max-width: 870px){
-	
-	
-	
+
+
+
 }
 
 
 @media only screen and (max-width: 976px){
-	
-	
-	
+
+
+
 }
-	
+
 @media only screen and (max-width: 1023px){
-	
+
 	.main-header .main-box .logo-box {
 		position:relative;
 		left:0px;
@@ -186,7 +185,7 @@
 		margin:0px;
 		text-align:left;
 	}
-	
+
 	.main-header .outer-box{
 		display:block;
 	}
@@ -196,7 +195,7 @@
 		top: 0px;
 		background-color: var(--color-two);
 	}
-	
+
 	.newsletter-popup-area-section{
 		display: none !important;
 	}
@@ -209,15 +208,15 @@
 		width:100%;
 		text-align:center;
 	}
-	
+
 	.main-header .mobile-nav-toggler{
 		display:block;
 	}
-	
+
 	.main-header .sticky-header .mobile-nav-toggler{
 		display:block;
 	}
-	
+
 	.slider-two_cloud-layer,
 	.slider-two_image-column,
 	.slider-two_icon-three,
@@ -231,12 +230,12 @@
 	.main-header.header-style-three .nav-outer{
 		display:none;
 	}
-	
+
 	.main-header.header-style-two .sticky-header .mobile-nav-toggler{
 		margin-top:var(--margin-zero);
 		margin-right:var(--margin-zero);
 	}
-	
+
 	.main-header.header-style-two .mobile-nav-toggler{
 		display:block;
 		padding:0px;
@@ -244,15 +243,15 @@
 		font-size:var(--font-34);
 		margin-right:var(--margin-right-15);
 	}
-	
+
 	.main-header.header-style-three .mobile-nav-toggler{
 		display:block;
 	}
-	
+
 	.main-header #navbarSupportedContent{
 		display:block;
 	}
-	
+
 	.main-header .mCSB_inside > .mCSB_container{
 		margin-right:0px;
 	}
@@ -577,24 +576,24 @@
 }
 
 @media only screen and (max-width: 767px){
-	
+
 	.main-header .header-upper .logo-outer {
 		position:relative;
 		width:100%;
 	}
-	
+
 	.main-header .sticky-header .outer-box{
 		display:block;
 		right: 0px;
 		left: auto;
 		top:0px;
 	}
-	
+
 	.main-header .main-menu{
 		width:100%;
 		display:none;
 	}
-	
+
 	.slider-one_slide {
 		padding: 120px 0px 120px;
 	}
@@ -603,15 +602,15 @@
 	.header-top_socials,
 	.main-header .main-menu .navbar-collapse > .navigation li.dropdown:after,
 	.main-header .main-menu .navigation > li > ul:before{
-		display:none !important;	
+		display:none !important;
 	}
-	
+
 	.main-header .main-box .logo-box{
 		float:none;
 		text-align:center;
 		padding-bottom:10px;
 	}
-	
+
 	.location-one_map-column{
 		margin-bottom: var(--margin-bottom-30);
 	}
@@ -621,7 +620,7 @@
 		z-index:12;
 		display:block;
 	}
-	
+
 	.main-header .main-menu .navbar-header .navbar-toggler{
 		display: inline-block;
 		z-index: 12;
@@ -634,7 +633,7 @@
 		background: none;
 		border: 1px solid #ffffff;
 	}
-	
+
 	.main-header .main-menu .navbar-header .navbar-toggler .icon-bar{
 		position: relative;
 		background: #ffffff;
@@ -644,35 +643,35 @@
 		margin:0 auto;
 		margin:5px 11px;
 	}
-	
+
 	.main-header .nav-outer{
 		width:100%;
 	}
-	
+
 	.main-header .nav-outer .mobile-nav-toggler{
 		display: block;
 	}
-	
+
 	.main-header #navbarSupportedContent{
 		display:block;
 	}
-	
+
 	.main-header .mCSB_inside > .mCSB_container{
 		margin-right:0px;
 	}
-	
+
 	.main-header .outer-box{
 		position:relative;
 		left:0px;
 		margin-left:0px;
 		padding:0px 0px;
 	}
-	
+
 	.main-header .sticky-header .mobile-nav-toggler{
 		display:block;
 		padding:15px 0px;
 	}
-	
+
 	.main-header .outer-box .nav-btn{
 		display:block;
 	}
@@ -789,7 +788,7 @@
 		position: relative;
 		margin-bottom: 30px;
 	}
-	
+
 	.event-team-section .circle-layer,
 	.event-pricing-section .circle-layer{
 		display: none;
@@ -838,7 +837,7 @@
 	.appointmeny_button-box{
 		display: none;
 	}
-	
+
 	.main-header .mobile-nav-toggler{
 		margin-left: var(--margin-zero);
 	}
@@ -1007,12 +1006,12 @@
 }
 
 @media only screen and (max-width: 479px) {
-	
+
 	h1 {
 		font-size: 24px;
     	line-height: 34px;
 	}
-	
+
 	h2 {
 		line-height: 38px;
 		font-size: var(--font-28);
@@ -1114,7 +1113,7 @@
 
 	.sidebar-widget .widget-content{
 		padding: 25px 25px;
-	}	
+	}
 
 	.coming-soon .emailed-form .text,
 	.accordion-box .block .acc-btn{
