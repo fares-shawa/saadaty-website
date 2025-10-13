@@ -1,11 +1,6 @@
 @extends('frontend.main')
 @section('head')
-<style>
-.footer-two{
-    direction: rtl;
-    text-align: right;
-}
-</style>
+
 @endsection
 @section('content')
 <section class="banner-section-two" dir="rtl">
@@ -50,7 +45,7 @@
 				<div class="about-two_image-column col-lg-6 col-md-12 col-sm-12">
 					<div class="about-two_image-inner">
 						<div class="about-two_image titlt" data-tilt data-tilt-max="5">
-							<img src="{{asset('assets/images/resource/about1.png') }}" alt="about" />
+							<img src="{{asset('assets/images/about.png') }}" alt="about" />
 						</div>
 					</div>
 				</div>
