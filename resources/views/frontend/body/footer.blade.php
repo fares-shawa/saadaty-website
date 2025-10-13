@@ -4,7 +4,7 @@
             <div class="row clearfix">
                 <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-two-widget logo-widget">
-                        <div class="footer-two_logo mb-3">
+                        <div class="footer-two_logo mb-3 text-center">
                             <a href="{{ route('home') }}">
                                 <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}" alt="سعادتي">
                             </a>

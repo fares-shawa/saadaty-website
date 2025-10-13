@@ -1,9 +1,6 @@
 @extends('frontend.main')
-@section('head')
-
-@endsection
 @section('content')
-<section class="banner-section-two" dir="rtl">
+<section class="banner-section-two">
     <div class="auto-container">
 		<div class="text-center mb-5">
 		    <h2>نحو ليلة عمر خالدة … سعادتي ترافقك في كل التفاصيل</h2>
@@ -19,7 +16,7 @@
 	</div>
 </section>
 
-<section class="about-two" id="about" dir="rtl">
+<section class="about-two" id="about">
     <div class="auto-container">
 	    <div class="row clearfix">
 		    <div class="about-two_content-column col-lg-6 col-md-12 col-sm-12 mt-5">

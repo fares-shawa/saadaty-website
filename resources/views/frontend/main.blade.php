@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
     <title>سعادتــــي</title>
@@ -18,7 +18,7 @@
 </head>
 
 <body class="hidden-bar-wrapper">
-    <div class="page-wrapper rtl">
+    <div class="page-wrapper">
 	    @include('frontend.body.header')
 	    @yield('content')
 	    @include('frontend.body.footer')

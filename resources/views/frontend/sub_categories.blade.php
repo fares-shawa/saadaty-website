@@ -12,7 +12,7 @@
 	<!-- Sidebar Page Container -->
 	<section class="news-two" id="blog">
 		<div class="auto-container">
-			<div class="row clearfix">
+			<div class="row">
 				<div class="default-form contact-form">
                     <form method="get" action="#" id="contact-form" novalidate="novalidate">
                         <div class="row clearfix mt-5 mb-5">
@@ -22,17 +22,14 @@
                                 </select>
                             </div>
                             <div class="col-lg-4 mt-3 select-wrapper">
-                                <select class="form-control-custom select2" name="district" required>
+                                <select class="form-control-custom" name="district" required>
                                     @foreach ($districts as $district)
                                         <option value="{{ $district }}">{{ $district }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-lg-4 mt-3 search-wrapper">
-                                <input type="search" name="search-field" placeholder="ابحث باسم القاعة" required>
-                                <button type="submit">
-                                    <span class="icon fa fa-search"></span>
-                                </button>
+                                <input class="form-control-custom" type="text" name="search" placeholder="ابحث باسم القاعة" required>
                             </div>
                             <div class="col-lg-4 mt-3 select-wrapper">
                                 <select class="form-control-custom" id="leatest" name="leatest" required>
