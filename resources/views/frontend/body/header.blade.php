@@ -5,7 +5,7 @@
 				<div class="logo-box">
 					<div class="logo">
                         <a href="{{ route('home') }}#banner">
-                            <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}"" alt="Saadati Logo">
+                            <img class="logo" src="{{ asset('assets/images/logo.png') }}"" alt="Saadati Logo">
                         </a>
                     </div>
 				</div>
@@ -46,7 +46,7 @@
 				<!-- Logo -->
 				<div class="logo">
 					<a href="{{ route('home') }}">
-                        <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}" alt="Saadaty Logo">
+                        <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="Saadaty Logo">
                     </a>
 				</div>
 				<div class="right-box">
@@ -71,7 +71,7 @@
 		<nav class="menu-box">
 		    <div class="nav-logo">
                 <a href="#">
-                    <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}" alt="Saadaty Logo" />
+                    <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="Saadaty Logo" />
                 </a>
             </div>
 			<div class="menu-outer"></div>

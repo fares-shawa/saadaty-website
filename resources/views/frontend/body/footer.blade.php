@@ -6,7 +6,7 @@
                     <div class="footer-two-widget logo-widget">
                         <div class="footer-two_logo mb-3 text-center">
                             <a href="{{ route('home') }}">
-                                <img class="logo" src="{{ asset('assets/images/logo-saadaty.png') }}" alt="سعادتي">
+                                <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="سعادتي">
                             </a>
                         </div>
                         <div class="footer-two_text">
@@ -32,7 +32,7 @@
                         <ul class="footer-two_contact-list">
                             <li><span class="icon fa-solid fa-phone fa-fw"></span> +966503732107</li>
                             <li><span class="icon fa-solid fa-envelope fa-fw"></span>
-                                <a href="mailto:info@saadatyapp.com">info@saadatyapp.com</a>
+                                <a href="mailto:info@saadatyapp.com">support@saadatyapp.com</a>
                             </li>
                             <li><span class="icon fa-solid fa-map-marker fa-fw"></span>
                                 ٧٠٦٢، محمد بن عبدالواحد الطبري، حي النخيل، ٤٣٥٧
