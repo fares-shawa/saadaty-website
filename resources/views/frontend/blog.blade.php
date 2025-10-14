@@ -2,10 +2,7 @@
 
 @section('head')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-@endsection
-@section('content')
-
-<style>
+    <style>
     .breadcrumb a {
         transition: color 0.3s ease;
     }
@@ -197,6 +194,10 @@
         display: none!important;
     }
 </style>
+@endsection
+@section('content')
+
+
 
     <!-- Page Title -->
     <section class="banner-section-two" style="background-image:url({{ asset('assets/images/background/saadaty_banner.png') }})">
@@ -205,10 +206,10 @@
     <!-- End Page Title -->
 
     <!-- Speakers Three -->
-    <section class="gallery-three">
+    <section class="gallery-three" dir="rtl">
         <div class="auto-container">
             <!-- Breadcrumb -->
-            <nav aria-label="breadcrumb" dir="rtl" class="mb-3">
+            <nav aria-label="breadcrumb" class="mb-3">
                 <ol class="breadcrumb" style="background-color: transparent; font-size: 16px;">
                     <li class="breadcrumb-item">
                         <a href="{{ route('home') }}" class="text-decoration-none text-dark fw-semibold">
@@ -225,7 +226,7 @@
                     </li>
                 </ol>
             </nav>
-            <div class="sec-title title-anim">
+            <div class="sec-title title-anim" style="text-align:right;">
                 <h2 class="sec-title_heading">{{ $store['name'] }}</h2>
                 <div class="sec-title_title">
                     جدة, {{ $store['district'] }}
@@ -234,6 +235,17 @@
             </div>
             <div class="row clearfix mb-5">
                 <div class="gallery-wrapper">
+                     <!-- Main Big Image -->
+                    <div class="gallery-main">
+                        <!-- الصورة الرئيسية تبقى كما هي -->
+                        <img id="gallery-trigger" src="{{ $store['main_image'] }}" alt="Main Image"
+                            style="cursor:pointer; max-width:100%;max-height:600px;">
+
+                        <!-- زر عرض الكل -->
+                        <a href="#" id="open-gallery" class="see-all-btn">
+                            <i class="fa fa-camera"></i> اعرض كل الصور
+                        </a>
+                    </div>
                     <!-- Right Side Small Images -->
                     <div class="gallery-thumbs">
                         @foreach($media as $item)
@@ -247,18 +259,6 @@
                             @endif
                         @endforeach
                     </div>
-
-                    <!-- Main Big Image -->
-                    <div class="gallery-main">
-                        <!-- الصورة الرئيسية تبقى كما هي -->
-                        <img id="gallery-trigger" src="{{ $store['main_image'] }}" alt="Main Image"
-                            style="cursor:pointer; max-width:100%;max-height:600px;">
-
-                        <!-- زر عرض الكل -->
-                        <a href="#" id="open-gallery" class="see-all-btn">
-                            <i class="fa fa-camera"></i> اعرض كل الصور
-                        </a>
-                    </div>
                 </div>
             </div>
             <hr style="margin-bottom: 40px; width: 80%; margin-left: 10%;">
@@ -268,28 +268,28 @@
                     <div class="d-flex justify-content-between row-gap-3 flex-md-row flex-lg-nowrap flex-md-wrap flex-column">
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
-                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">السعر</p>
                                 <div class="feature-block_one-icon">
                                     <img src="{{ asset('assets/icons/price.png') }}" style="width:30px;">
                                 </div>
+                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">السعر</p>
                             </div>
                             <p class="black-color mb-0 fw-semibold" style="font-size: 20px;">من {{ $store['price_from'] }} إلى {{ $store['price_to'] }}</p>
                         </div>
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
-                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">خبرة السنوات</p>
                                 <div class="feature-block_one-icon">
                                     <img src="{{ asset('assets/icons/experience.png') }}" style="width:30px;">
                                 </div>
+                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">خبرة السنوات</p>
                             </div>
                             <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['experience'] }}</p>
                         </div>
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
-                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">العربون</p>
                                 <div class="feature-block_one-icon">
                                     <img src="{{ asset('assets/icons/downpayment.png') }}" style="width:30px;">
                                 </div>
+                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">العربون</p>
                             </div>
                             <p class="black-color mb-0 fw-semibold" style="font-size: 20px">
                                 @if($store['forward'] == 'no')لا @endif
@@ -298,10 +298,10 @@
                         </div>
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center gap-4">
-                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">الفريق</p>
                                 <div class="feature-block_one-icon">
                                     <img src="{{ asset('assets/icons/team.png') }}" style="width:30px;">
                                 </div>
+                                <p class="black-color mb-0 fw-bold" style="font-size: 20px; margin-right: 15px;">الفريق</p>
                             </div>
                             <p class="black-color mb-0 fw-semibold" style="font-size: 20px">{{ $store['team_size'] }}</p>
                         </div>
@@ -354,16 +354,16 @@
                 <div class="col-md-6 text-md-end text-center">
                     <h4 class="fw-bold mb-3">: تابعونا على</h4>
                     <div class="social-icons">
-                        <a href="{{ $store['snapchat'] }}" target="_blank" rel="noopener noreferrer">
+                         <a href="{{ Str::startsWith($store['snapchat'], ['http://', 'https://']) ? $store['snapchat'] : 'https://' . $store['snapchat'] }}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-snapchat"></i>
                         </a>
-                        <a href="{{ $store['twitter'] }}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ Str::startsWith($store['twitter'], ['http://', 'https://']) ? $store['twitter'] : 'https://' . $store['twitter'] }}" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="height: 35px;"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/></svg>
                         </a>
-                        <a href="{{ $store['instagram'] }}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ Str::startsWith($store['instagram'], ['http://', 'https://']) ? $store['instagram'] : 'https://' . $store['instagram'] }}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="{{ $store['snapchat'] }}" target="_blank" rel="noopener noreferrer">
+                         <a href="{{ Str::startsWith($store['snapchat'], ['http://', 'https://']) ? $store['snapchat'] : 'https://' . $store['snapchat'] }}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </div>
