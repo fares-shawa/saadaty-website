@@ -9,7 +9,6 @@
             <a href="{{ route('home') }}#contact" class="theme-btn btn-style-one">
                 <span class="btn-wrap">
                     <span class="sub-text">تواصل معنا</span>
-                    <span class="sub-text">تواصل معنا</span>
                 </span>
             </a>
         </div>
