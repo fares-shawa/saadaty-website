@@ -1,5 +1,5 @@
 .logo{
- height: 100px;
+ height: 80px;
 }
 
 .banner-section-two{
@@ -9,6 +9,11 @@
 .sub-text{
     font-size: 18px;
     color: white;
+}
+
+.search-box-btn .btn {
+    padding: 10px 10px;
+    margin-left: 10px;
 }
 
 .color-primary{
