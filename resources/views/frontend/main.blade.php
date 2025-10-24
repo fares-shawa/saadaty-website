@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FHQNZRB5M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0FHQNZRB5M');
+</script>
     <meta charset="utf-8">
     <title>سعادتــــي</title>
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
