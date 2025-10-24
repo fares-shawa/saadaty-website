@@ -21,8 +21,8 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('home') }}#categories" class="text-decoration-none text-dark fw-semibold">
-                                القاعات
+                            <a href="/stores/{{ $store['category_id'] }}" class="text-decoration-none text-dark fw-semibold">
+                                {{ $store['category'] }}
                             </a>
                         </li>
                         <li class="breadcrumb-item active fw-bold" aria-current="page" style="color: #F2B100;">
