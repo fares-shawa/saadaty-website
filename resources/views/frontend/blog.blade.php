@@ -31,12 +31,17 @@
                     </ol>
                 </nav>
                 <div class="sec-title title-anim" style="text-align:right;">
-                    <h2 class="sec-title_heading">{{ $store['name'] }}</h2>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="{{ asset('assets/none.jpeg') }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+                    <div>
+                    <h2 class="sec-title_heading" style="margin: 0;">{{ $store['name'] }}</h2>
                     <div class="sec-title_title">
                         جدة, {{ $store['district'] }}
                         <span style="color: #F2B100"><i class="icon fa fa-map-marker"></i></span>
                     </div>
                 </div>
+            </div>
+        </div>
                 <div class="row clearfix mb-5">
                     <div class="gallery-wrapper">
                         <!-- Main Big Image -->
