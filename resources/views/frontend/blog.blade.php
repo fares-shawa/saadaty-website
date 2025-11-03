@@ -31,7 +31,11 @@
             </nav>
             <div class="sec-title title-anim" style="text-align:right;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="{{ asset('assets/none2.jpg') }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+                    @if($store['logo'] == null)
+                        <img src="{{ asset('assets/none2.jpg') }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+                    @else
+                        <img src="{{ $store['logo'] }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+                    @endif
                 <div>
                 <h2 class="sec-title_heading" style="margin: 0;">{{ $store['name'] }}</h2>
                 <div class="sec-title_title">
