@@ -48,11 +48,9 @@
             <div class="gallery-wrapper">
                 <!-- Main Big Image -->
                 <div class="gallery-main">
-                    <!-- الصورة الرئيسية تبقى كما هي -->
                     <img id="gallery-trigger" src="{{ $store['main_image'] }}" alt="Main Image"
-                        style="cursor:pointer; max-width:100%;max-height:500px;min-width:700px;">
+                        style="cursor:pointer; max-width:100%;max-height:620px;min-width:700px;">
 
-                    <!-- زر عرض الكل -->
                     <a href="#" id="open-gallery" class="see-all-btn">
                         <i class="fa fa-camera"></i> اعرض كل الصور
                     </a>
