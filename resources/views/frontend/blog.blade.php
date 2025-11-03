@@ -50,7 +50,7 @@
                 <div class="gallery-main">
                     <!-- الصورة الرئيسية تبقى كما هي -->
                     <img id="gallery-trigger" src="{{ $store['main_image'] }}" alt="Main Image"
-                        style="cursor:pointer; max-width:100%;max-height:600px;min-width:700px;">
+                        style="cursor:pointer; max-width:100%;max-height:500px;min-width:700px;">
 
                     <!-- زر عرض الكل -->
                     <a href="#" id="open-gallery" class="see-all-btn">
@@ -66,7 +66,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         @else
-                            <img src="{{ $item }}" alt="media" />
+                            <img src="{{ $item }}" alt="media" style="min-width:300px;/>
                         @endif
                     @endforeach
                 </div>
