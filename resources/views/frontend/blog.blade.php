@@ -66,7 +66,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         @else
-                            <img src="{{ $item }}" alt="media" style="min-width:300px;" />
+                            <img src="{{ $item }}" alt="media" style="min-width:250px;" />
                         @endif
                     @endforeach
                 </div>
