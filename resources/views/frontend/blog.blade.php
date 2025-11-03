@@ -43,7 +43,7 @@
                     <span style="color: #F2B100"><i class="icon fa fa-map-marker"></i></span>
                 </div>
             </div>
-        </div>
+        </div><BR />
         <div class="row clearfix mb-5">
             <div class="gallery-wrapper">
                 <!-- Main Big Image -->
