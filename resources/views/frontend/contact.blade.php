@@ -29,7 +29,7 @@
 
 					<!-- Contact Form -->
 					<div class="contact-form">
-						<form method="post" action="https://html.themerange.net/conat/conat/sendemail.php" id="contact-form">
+						<form method="post" action="#" id="contact-form">
 							<div class="row clearfix">
 
 								<div class="col-lg-6 col-md-6 col-sm-12 form-group">

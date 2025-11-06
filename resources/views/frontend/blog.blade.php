@@ -39,8 +39,8 @@
                 <div>
                 <h2 class="sec-title_heading" style="margin: 0;">{{ $store['name'] }}</h2>
                 <div class="sec-title_title">
-                    جدة, {{ $store['district'] }}
                     <span style="color: #F2B100"><i class="icon fa fa-map-marker"></i></span>
+                    جدة, {{ $store['district'] }}
                 </div>
             </div>
         </div><BR />
