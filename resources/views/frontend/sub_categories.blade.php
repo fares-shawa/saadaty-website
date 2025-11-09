@@ -94,15 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
     const results = document.getElementById('results');
 
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent page reload
-
-        // Gather form data
-        const formData = new FormData(this);
-        const params = new URLSearchParams(formData).toString();
-
+    // Function to fetch and render stores
+    async function fetchStores(params = '') {
         try {
-            // API call with x-api-key
             const response = await axios.get('https://admin.saadatyapp.com/api/search?' + params, {
                 headers: {
                     'X-API-KEY': '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0', // Replace with your actual key
@@ -150,6 +144,17 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error(error);
             results.innerHTML = '<p>حدث خطأ أثناء الاتصال بالخادم</p>';
         }
+    }
+
+    // Load all stores on page load
+    fetchStores();
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const params = new URLSearchParams(formData).toString();
+        fetchStores(params);
     });
 });
 </script>
