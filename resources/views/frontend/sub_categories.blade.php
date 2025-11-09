@@ -14,7 +14,7 @@
 		<div class="auto-container">
 			<div class="row">
 				<div class="default-form contact-form">
-                    <form method="get" action="https://admin.saadatyapp.com/api/search" id="contact-form" novalidate="novalidate">
+                   <form id="contact-form" novalidate="novalidate">
                         @csrf
                         <div class="row clearfix mt-5 mb-5">
                             <div class="col-lg-4 mt-3 select-wrapper">
@@ -82,6 +82,8 @@
 		</div>
 	</section>
 
+    <div id="results"></div>
+
 @endsection
 
 @section('scripts')
@@ -93,29 +95,34 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-document.getElementById('contact-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const results = document.getElementById('results');
 
-  const formData = new FormData(this);
-  const params = new URLSearchParams(formData).toString();
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // prevent normal form submission
 
-  try {
-    const response = await axios.get(
-      'https://admin.saadatyapp.com/api/search?' + params,
-      {
-        headers: {
-          'x-api-key': '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0',
-          'Accept': 'application/json'
+        // Gather form data
+        const formData = new FormData(this);
+        const params = new URLSearchParams(formData).toString();
+
+        try {
+            // Send GET request to API with x-api-key
+            const response = await axios.get('https://admin.saadatyapp.com/api/search?' + params, {
+                headers: {
+                    'x-api-key': 'YOUR_API_KEY_HERE', // replace with your API key
+                    'Accept': 'application/json'
+                }
+            });
+
+            // Display results
+            results.innerHTML = JSON.stringify(response.data, null, 2);
+        } catch (error) {
+            console.error(error);
+            results.innerHTML = '<p>حدث خطأ أثناء الاتصال بالخادم</p>';
         }
-      }
-    );
-
-    console.log(response.data);
-    document.getElementById('results').innerHTML = JSON.stringify(response.data, null, 2);
-  } catch (error) {
-    console.error(error);
-    alert('حدث خطأ أثناء الاتصال بالخادم');
-  }
+    });
 });
 </script>
+
 @endsection
