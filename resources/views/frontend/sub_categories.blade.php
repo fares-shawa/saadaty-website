@@ -134,33 +134,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function renderResults(stores) {
-        if (!stores || stores.length === 0) {
-            results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة</p>';
-            return;
-        }
+function renderResults(stores) {
+    if (!stores || stores.length === 0) {
+        results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة</p>';
+        return;
+    }
 
-        results.innerHTML = stores.map(store => `
-            <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
-                <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="news-block_two-image">
-                        <a href="/store/${store.id}">
-                            <img src="${store.main_image_url}" alt="${store.name}" />
-                        </a>
-                    </div>
-                    <div class="news-block_two-content text-center">
-                        <h4 class="news-block_two-title">
-                            <a href="/store/${store.id}">${store.name}</a>
-                        </h4>
-                        <h6 class="news-block_two-title" style="font-size:13px;">جدة - ${store.district || ''}</h6>
-                        <a href="/store/${store.id}" style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
-                            عــرض التفــاصيل
-                        </a>
-                    </div>
+    let html = '';
+
+    stores.forEach(store => {
+        html += `
+        <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
+            <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="news-block_two-image">
+                    <a href="/store/${store.id}">
+                        <img src="${store.main_image_url}" alt="${store.name}" />
+                    </a>
+                    <img src="${store.main_image_url}" alt="${store.name}" />
+                </div>
+                <div class="news-block_two-content text-center">
+                    <h4 class="news-block_two-title">
+                        <a href="/store/${store.id}">${store.name}</a>
+                    </h4>
+                    <h6 class="news-block_two-title" style="font-size:13px;">
+                        جدة - ${store.district || ''}
+                    </h6>
+                    <a href="/store/${store.id}"
+                       style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
+                       عــرض التفــاصيل
+                    </a>
                 </div>
             </div>
-        `).join('');
-    }
+        </div>
+        `;
+    });
+
+    results.innerHTML = html;
+}
 
     // Handle form submit
     form.addEventListener('submit', e => {
