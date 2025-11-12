@@ -1,5 +1,14 @@
 @extends('frontend.main')
-
+@section('styles')
+<style>
+    .news-block_two-image {
+    width: 100%;
+    height: 100%!important;
+    overflow: hidden;
+    border-radius: 25px 25px 0 0;
+}
+    </style>
+@endsection
 @section('content')
 <section class="banner-section-two">
     <div class="auto-container">
