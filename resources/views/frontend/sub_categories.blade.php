@@ -75,11 +75,7 @@
                 @foreach ($stores as $store)
                     <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
                         <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="news-block_two-image">
-                                <a href="{{ route('store', ['id' => $store['id']]) }}">
-                                    <img src="{{ ($store['main_image_url']) }}" alt="{{ $store['name'] }}" />
-                                </a>
-                            </div>
+                           <div class="news-block_two-image"> <a href="{{ route('store', ['id' => $store['id']]) }}"> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </a> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </div>
                             <div class="news-block_two-content text-center">
                                 <h4 class="news-block_two-title">
                                     <a href="{{ route('store', ['id' => $store['id']]) }}">{{ $store['name'] }}</a>
