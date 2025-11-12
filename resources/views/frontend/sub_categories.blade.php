@@ -11,7 +11,6 @@
     </div>
 </section>
 
-<!-- Sidebar Page Container -->
 <section class="news-two" id="blog">
     <div class="auto-container">
         <div class="row">
@@ -62,8 +61,32 @@
                 </form>
             </div>
 
-            <!-- Results will be injected here -->
-            <div id="results" class="row"></div>
+            <!-- initial stores from Laravel -->
+            <div id="results" class="row">
+                @foreach ($stores as $store)
+                    <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
+                        <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="news-block_two-image">
+                                <a href="{{ route('store', ['id' => $store['id']]) }}">
+                                    <img src="{{ asset($store['main_image_url']) }}" alt="{{ $store['name'] }}" />
+                                </a>
+                            </div>
+                            <div class="news-block_two-content text-center">
+                                <h4 class="news-block_two-title">
+                                    <a href="{{ route('store', ['id' => $store['id']]) }}">{{ $store['name'] }}</a>
+                                </h4>
+                                <h6 class="news-block_two-title" style="font-size:13px;">
+                                    جدة - {{ $store['district'] }}
+                                </h6>
+                                <a href="{{ route('store', ['id' => $store['id']]) }}"
+                                   style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
+                                   عــرض التفــاصيل
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
@@ -79,12 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
     const results = document.getElementById('results');
     const apiUrl = 'https://admin.saadatyapp.com/api/search';
-    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0'; // 🟡 Replace this with your real API key
+    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0'; // 🟡 Replace this with your actual key
 
-    // Initialize Select2
+    // Initialize select2
     $('.select2').select2({ placeholder: "اختر" });
 
-    // Fetch results from API
+    // Fetch results dynamically
     async function fetchResults() {
         const formData = new FormData(form);
         const params = new URLSearchParams(formData).toString();
@@ -99,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            const data = response.data.data || response.data; // Adjust if API structure changes
+            const data = response.data.data || response.data;
             renderResults(data);
 
         } catch (error) {
@@ -108,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Render store cards
+    // Render API results dynamically
     function renderResults(stores) {
         if (!stores || stores.length === 0) {
             results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة للبحث</p>';
@@ -150,20 +173,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchResults();
     });
 
-    // Auto-trigger search on page load
-    fetchResults();
-
-    // Optional: auto update when filters change (without clicking تطبيق)
+    // Optional live updates
     form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', fetchResults);
     });
 
-    // Optional: live search typing
     let typingTimer;
     const searchInput = form.querySelector('input[name="search"]');
     searchInput.addEventListener('keyup', () => {
         clearTimeout(typingTimer);
-        typingTimer = setTimeout(fetchResults, 600); // 0.6s delay after typing stops
+        typingTimer = setTimeout(fetchResults, 600);
     });
 });
 </script>
