@@ -1,6 +1,5 @@
 @extends('frontend.main')
 @section('styles')
-@dd($stores);
 <style>
     .news-block_two-image {
     width: 100%;
@@ -78,7 +77,7 @@
                         <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="news-block_two-image">
                                 <a href="{{ route('store', ['id' => $store['id']]) }}">
-                                    <img src="{{ asset($store['main_image_url']) }}" alt="{{ $store['name'] }}" />
+                                    <img src="{{ ($store['main_image_url']) }}" alt="{{ $store['name'] }}" />
                                 </a>
                             </div>
                             <div class="news-block_two-content text-center">
