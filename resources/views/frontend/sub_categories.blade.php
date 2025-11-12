@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
     const results = document.getElementById('results');
     const apiUrl = 'https://admin.saadatyapp.com/api/search';
-    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0; // 🟡 Replace this with your real API key
+    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0'; // 🟡 Replace this with your real API key
 
     // Initialize Select2
     $('.select2').select2({ placeholder: "اختر" });
