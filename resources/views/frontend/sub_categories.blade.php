@@ -17,6 +17,7 @@
             <div class="default-form contact-form">
                 <form id="contact-form" novalidate="novalidate">
                     @csrf
+                    <input type="text" name="category" value="{{ $id }}" />
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" id="city" name="city" required>
@@ -117,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const response = await axios.get(`${apiUrl}?${params}`, {
                 headers: {
-                    'X-API-KEY': '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0',
+                    'X-API-KEY': 'apiKey',
                     'Accept': 'application/json'
                 }
             });
