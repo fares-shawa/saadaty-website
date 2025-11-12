@@ -20,7 +20,7 @@
 
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
-                            <input type="text" name="category" value="{{ Request::segment(2) }}" />
+                            <input type="hidden" name="category" value="{{ Request::segment(2) }}" />
                             <select class="form-control-custom" id="city" name="city" required>
                                 <option value="jeddah" selected>جدة</option>
                             </select>
