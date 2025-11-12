@@ -26,13 +26,13 @@
                             </select>
                         </div>
 
-                        <div class="col-lg-4 mt-3 select-wrapper">
+                        {{-- <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" name="district" required>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district }}">{{ $district }}</option>
                                 @endforeach
                             </select>
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-4 mt-3 search-wrapper">
                             <input class="form-control-custom" type="text" name="search" placeholder="ابحث باسم القاعة">
