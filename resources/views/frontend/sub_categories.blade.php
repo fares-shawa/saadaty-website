@@ -1,5 +1,6 @@
 @extends('frontend.main')
 @section('styles')
+@dd($stores);
 <style>
     .news-block_two-image {
     width: 100%;
@@ -72,41 +73,30 @@
 
             <!-- Results -->
             <div id="results" class="row">
-    @foreach ($stores as $store)
-        @php
-            // Prepare image URL: prepend API domain if relative, fallback to default
-            $imageUrl = $store['main_image_url'] ?? null;
-            if ($imageUrl && !Str::startsWith($imageUrl, ['http://','https://'])) {
-                $imageUrl = 'https://admin.saadatyapp.com' . $imageUrl;
-            } elseif (!$imageUrl) {
-                $imageUrl = '/images/default.png';
-            }
-        @endphp
-
-        <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
-            <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="news-block_two-image">
-                    <a href="{{ route('store', ['id' => $store['id']]) }}">
-                        <img src="{{ $imageUrl }}" alt="{{ $store['name'] }}" />
-                    </a>
-                </div>
-                <div class="news-block_two-content text-center">
-                    <h4 class="news-block_two-title">
-                        <a href="{{ route('store', ['id' => $store['id']]) }}">{{ $store['name'] }}</a>
-                    </h4>
-                    <h6 class="news-block_two-title" style="font-size:13px;">
-                        جدة - {{ $store['district'] ?? '' }}
-                    </h6>
-                    <a href="{{ route('store', ['id' => $store['id']]) }}"
-                       style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
-                       عــرض التفــاصيل
-                    </a>
-                </div>
+                @foreach ($stores as $store)
+                    <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
+                        <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="news-block_two-image">
+                                <a href="{{ route('store', ['id' => $store['id']]) }}">
+                                    <img src="{{ asset($store['main_image_url']) }}" alt="{{ $store['name'] }}" />
+                                </a>
+                            </div>
+                            <div class="news-block_two-content text-center">
+                                <h4 class="news-block_two-title">
+                                    <a href="{{ route('store', ['id' => $store['id']]) }}">{{ $store['name'] }}</a>
+                                </h4>
+                                <h6 class="news-block_two-title" style="font-size:13px;">
+                                    جدة - {{ $store['district'] }}
+                                </h6>
+                                <a href="{{ route('store', ['id' => $store['id']]) }}"
+                                   style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
+                                   عــرض التفــاصيل
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        </div>
-    @endforeach
-</div>
-
         </div>
     </div>
 </section>
