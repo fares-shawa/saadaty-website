@@ -17,7 +17,7 @@
             <div class="default-form contact-form">
                 <form id="filter-form" novalidate>
                     @csrf
-                    <input type="hidden" name="category_id" value="{{ Request::segment(2) }}">
+                    <input type="hidden" name="category" value="{{ Request::segment(2) }}">
 
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
