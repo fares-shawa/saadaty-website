@@ -3,7 +3,7 @@
 <style>
     .news-block_two-image {
     width: 100%;
-    height: 100%!important;
+    height: 200px!important;
 }
     </style>
 @endsection
