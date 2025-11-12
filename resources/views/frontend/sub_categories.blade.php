@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const response = await axios.get(`${apiUrl}?${params}`, {
                 headers: {
-                    'X-API-KEY': apiKey,
+                    'X-API-KEY': '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0',
                     'Accept': 'application/json'
                 }
             });
