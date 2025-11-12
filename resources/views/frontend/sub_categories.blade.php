@@ -17,7 +17,7 @@
             <div class="default-form contact-form">
                 <form id="contact-form" novalidate="novalidate">
                     @csrf
-                    <input type="text" name="category" value="{{ $store['category_id'] }}" />
+                    <input type="text" name="category" value="{{ Request::segment(3) }}" />
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" id="city" name="city" required>
