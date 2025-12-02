@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>سعادتي - حيث يلتقي الحلم بالواقع</title>
-    @include('layouts.seo')
+    @include('partials.seo')
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
@@ -13,9 +13,9 @@
 
 <body class="hidden-bar-wrapper">
     <div class="page-wrapper">
-	    @include('frontend.body.header')
+	    @include('partials.header')
 	    @yield('content')
-	    @include('frontend.body.footer')
+	    @include('partials.footer')
     </div>
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

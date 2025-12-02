@@ -1,4 +1,4 @@
-@extends('frontend.main')
+@extends('layouts.main')
 @section('head')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/custom-blog.css') }}" />

@@ -1,4 +1,4 @@
-@extends('frontend.main')
+@extends('layouts.main')
 @section('content')
 <section class="banner-section-two">
     <div class="auto-container">

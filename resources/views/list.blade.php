@@ -1,4 +1,4 @@
-@extends('frontend.main')
+@extends('layouts.main')
 @section('styles')
 <style>
     .news-block_two-image {
@@ -72,7 +72,7 @@
 
             <!-- Results -->
             <div id="results" class="row">
-                @foreach ($stores as $store)
+                @foreach ($stores['data'] as $store)
                     <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
                         <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                            <div class="news-block_two-image"> <a href="{{ route('store', ['id' => $store['id']]) }}"> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </a> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </div>
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('filter-form');
     const results = document.getElementById('results');
     const apiUrl = 'https://admin.saadatyapp.com/api/search';
-    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0'; // ✅ actual key
+    const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0';
 
     async function fetchResults() {
         const formData = new FormData(form);
