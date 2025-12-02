@@ -91,7 +91,6 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $stores->links() }}
             </div>
         </div>
     </div>
