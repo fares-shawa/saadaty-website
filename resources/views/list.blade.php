@@ -91,7 +91,17 @@
                         </div>
                     </div>
                 @endforeach
-                {!! $stores['links_html'] !!}
+
+                <div class="pagination">
+                    @if($stores['prev_page_url'])
+                        <a href="{{ $stores['prev_page_url'] }}">Previous</a>
+                    @endif
+
+                    Page {{ $stores['current_page'] }} of {{ $stores['last_page'] }}
+
+                    @if($stores['next_page_url'])
+                        <a href="{{ $stores['next_page_url'] }}">Next</a>
+                    @endif
             </div>
         </div>
     </div>
