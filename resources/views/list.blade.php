@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $stores->links() }}
+                {!! $stores['links_html'] !!}
             </div>
         </div>
     </div>
