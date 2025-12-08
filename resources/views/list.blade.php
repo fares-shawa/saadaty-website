@@ -1,11 +1,5 @@
 @extends('layouts.main')
 @section('styles')
-<style>
-    .news-block_two-image {
-    width: 100%;
-    height: 200px!important;
-}
-    </style>
 @endsection
 @section('content')
 <section class="banner-section-two">
@@ -71,11 +65,16 @@
             </div>
 
             <!-- Results -->
-            <div id="results" class="row">
+            <div id="results" class="row" style="width:100%;">
                 @foreach ($stores['data'] as $store)
                     <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
                         <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                           <div class="news-block_two-image"> <a href="{{ route('store', ['id' => $store['id']]) }}"> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </a> <img src="{{ asset($store['main_image_url']) }}" alt="" /> </div>
+                           <div class="news-block_two-image">
+                                <a href="{{ route('store', ['id' => $store['id']]) }}">
+                                    <img src="{{ asset($store['main_image_url']) }}" alt="" />
+                                </a>
+                                <img src="{{ asset($store['main_image_url']) }}" alt="" />
+                            </div>
                             <div class="news-block_two-content text-center">
                                 <h4 class="news-block_two-title">
                                     <a href="{{ route('store', ['id' => $store['id']]) }}">{{ $store['name'] }}</a>
@@ -115,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (value) params.append(key, value);
         }
 
-        // Ensure Arabic district names are encoded
         const queryString = params.toString();
 
         try {
@@ -137,61 +135,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-function renderResults(stores) {
-    if (!stores || stores.length === 0) {
-        results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة</p>';
-        return;
-    }
+    function renderResults(stores) {
+        if (!stores || stores.length === 0) {
+            results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة</p>';
+            return;
+        }
 
-    let html = '';
+        let html = '';
 
-    stores.forEach(store => {
-        html += `
-        <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
-            <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="news-block_two-image">
-                    <a href="/store/${store.id}">
-                        <img src="${store.main_image_url}" alt="${store.name}" />
-                    </a>
-                    <img src="${store.main_image_url}" alt="${store.name}" />
-                </div>
-                <div class="news-block_two-content text-center">
-                    <h4 class="news-block_two-title">
-                        <a href="/store/${store.id}">${store.name}</a>
-                    </h4>
-                    <h6 class="news-block_two-title" style="font-size:13px;">
-                        جدة - ${store.district || ''}
-                    </h6>
-                    <a href="/store/${store.id}"
-                       style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
-                       عــرض التفــاصيل
-                    </a>
+        stores.forEach(store => {
+            html += `
+            <div class="news-block_two col-lg-4 col-md-6 col-sm-12 mt-3">
+                <div class="news-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="news-block_two-image">
+                        <a href="/store/${store.id}">
+                            <img src="${store.main_image_url}" alt="${store.name}" />
+                        </a>
+                        <img src="${store.main_image_url}" alt="${store.name}" style="min-width:400px!important;"/>
+                    </div>
+                    <div class="news-block_two-content text-center">
+                        <h4 class="news-block_two-title">
+                            <a href="/store/${store.id}">${store.name}</a>
+                        </h4>
+                        <h6 class="news-block_two-title" style="font-size:13px;">
+                            جدة - ${store.district || ''}
+                        </h6>
+                        <a href="/store/${store.id}"
+                           style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
+                           عــرض التفــاصيل
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        `;
-    });
+            `;
+        });
 
-    results.innerHTML = html;
-}
+        results.innerHTML = html;
+    }
 
-    // Handle form submit
+    // تشغيل فقط عند الضغط على زر "تطبيق"
     form.addEventListener('submit', e => {
         e.preventDefault();
         fetchResults();
-    });
-
-    // Automatically fetch on change
-    form.querySelectorAll('select').forEach(sel => {
-        sel.addEventListener('change', fetchResults);
-    });
-
-    // Auto fetch on typing
-    let typingTimer;
-    const searchInput = form.querySelector('input[name="search"]');
-    searchInput.addEventListener('keyup', () => {
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(fetchResults, 600);
     });
 });
 </script>
