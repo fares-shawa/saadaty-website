@@ -30,7 +30,7 @@
                         <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" name="district" required>
                                 @foreach ($districts as $district)
-                                    <option value="{{ $district }}">{{ $district }}</option>
+                                    <option value="{{ $district['id'] }}">{{ $district['name'] }}</option>
                                 @endforeach
                             </select>
                         </div>
