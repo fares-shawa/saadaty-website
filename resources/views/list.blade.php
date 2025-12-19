@@ -23,7 +23,7 @@
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" id="city" name="city" required>
-                                <option value="" selected>جدة</option>
+                                <option value="Jeddah" selected>جدة</option>
                                 <option value="Jazan">جازان</option>
                             </select>
                         </div>
