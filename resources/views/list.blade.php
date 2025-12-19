@@ -23,12 +23,13 @@
                     <div class="row clearfix mt-5 mb-5">
                         <div class="col-lg-4 mt-3 select-wrapper">
                             <select class="form-control-custom" id="city" name="city" required>
-                                <option value="جدة" selected>جدة</option>
+                                <option value="" selected>جدة</option>
+                                <option value="Jazan">جازان</option>
                             </select>
                         </div>
 
                         <div class="col-lg-4 mt-3 select-wrapper">
-                            <select class="form-control-custom" name="district" required>
+                            <select class="form-control-custom" name="district" id="district" required>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district['id'] }}">{{ $district['name'] }}</option>
                                 @endforeach
@@ -103,9 +104,48 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('filter-form');
     const results = document.getElementById('results');
+
+    const citySelect = document.getElementById('city');
+    const districtSelect = document.getElementById('district');
+
     const apiUrl = 'https://admin.saadatyapp.com/api/search';
     const apiKey = '8f4d9a2b-6c1e-4b7a-9d3e-12f5a8b7c9d0';
 
+    /* ===============================
+       تحميل الأحياء حسب المدينة
+    =============================== */
+    async function loadDistricts(city = '') {
+        districtSelect.innerHTML = '<option>جاري التحميل...</option>';
+
+        try {
+            const url = city
+                ? `https://admin.saadatyapp.com/api/districtsMobile?city=${encodeURIComponent(city)}`
+                : `https://admin.saadatyapp.com/api/districtsMobile`;
+
+            const response = await axios.get(url, {
+                headers: {
+                    'X-API-KEY': apiKey,
+                    'Accept': 'application/json'
+                }
+            });
+
+            const districts = response.data;
+
+            let options = '<option value="">اختر الحي</option>';
+            districts.forEach(d => {
+                options += `<option value="${d.id}">${d.name}</option>`;
+            });
+
+            districtSelect.innerHTML = options;
+        } catch (error) {
+            console.error(error);
+            districtSelect.innerHTML = '<option>حدث خطأ</option>';
+        }
+    }
+
+    /* ===============================
+       البحث عن القاعات
+    =============================== */
     async function fetchResults() {
         const formData = new FormData(form);
         const params = new URLSearchParams();
@@ -114,12 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (value) params.append(key, value);
         }
 
-        const queryString = params.toString();
-
         try {
             results.innerHTML = '<p class="text-center mt-5">جاري التحميل...</p>';
 
-            const response = await axios.get(`${apiUrl}?${queryString}`, {
+            const response = await axios.get(`${apiUrl}?${params.toString()}`, {
                 headers: {
                     'X-API-KEY': apiKey,
                     'Accept': 'application/json'
@@ -135,6 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    /* ===============================
+       عرض النتائج
+    =============================== */
     function renderResults(stores) {
         if (!stores || stores.length === 0) {
             results.innerHTML = '<p class="text-center mt-5">لا توجد نتائج مطابقة</p>';
@@ -158,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="/store/${store.id}">${store.name}</a>
                         </h4>
                         <h6 class="news-block_two-title" style="font-size:13px;">
-                            جدة - ${store.district || ''}
+                            ${citySelect.value} - ${store.district || ''}
                         </h6>
                         <a href="/store/${store.id}"
                            style="display:inline-block; background-color:#F2B100; color:#fff; padding:10px 25px; border-radius:25px; text-decoration:none; margin-top:15px; font-weight:600;">
@@ -173,11 +214,26 @@ document.addEventListener('DOMContentLoaded', function() {
         results.innerHTML = html;
     }
 
-    // تشغيل فقط عند الضغط على زر "تطبيق"
-    form.addEventListener('submit', e => {
+    /* ===============================
+       الأحداث
+    =============================== */
+    // تغيير المدينة → تحميل الأحياء
+    citySelect.addEventListener('change', function () {
+        loadDistricts(this.value);
+    });
+
+    // عند الضغط على "تطبيق" → تنفيذ البحث
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         fetchResults();
     });
+
+    /* ===============================
+       تحميل الأحياء افتراضياً عند فتح الصفحة
+    =============================== */
+    loadDistricts(citySelect.value);
+
 });
 </script>
+
 @endsection
