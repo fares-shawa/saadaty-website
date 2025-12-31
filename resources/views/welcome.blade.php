@@ -131,27 +131,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
-                    <div class="news-block_one-inner">
-                        <div class="news-block_one-image">
-                            <a href="#">
-                                <img src="{{ asset('assets/images/placeholder.jpeg') }}" alt="Placeholder" style="object-fit:contain;" />
-                            </a>
-                            <img src="{{ asset('assets/images/placeholder.jpeg') }}" alt="" style="object-fit:contain;" />
-                        </div>
-                        <div class="news-block_one-content text-center">
-                            <h5 class="news-block_one-title">
-                                <a href="{{ route('stores', ['id' => $category['id']]) }}">
-                                    قريبا
-                                </a>
-                            </h5>
-                            <p style="margin-top: 20px;">نستعد لإضافة فئات جديدة ترتقي بتجربتكم</p>
-                            <a href="#" class="btn-detail" style="background:grey" disabled>
-                                 عــرض التفــاصيل
-                            </a>
-                        </div>
-                    </div>
-                </div>
 			</div>
 		</div>
     </div>
