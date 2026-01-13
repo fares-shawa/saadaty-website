@@ -47,5 +47,9 @@ class PagesController extends Controller{
         return view('store', compact('store', 'media'));
     }
 
+    public function deleteCustomer(Request $request){
+        return response()->json(['message' => 'تمت جدولة حذف الحساب'], 200);
+    }
+
 
 }
