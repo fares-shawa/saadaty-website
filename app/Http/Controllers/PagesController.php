@@ -48,7 +48,7 @@ class PagesController extends Controller{
     }
 
     public function deleteCustomer(Request $request){
-        return response()->json(['message' => 'تمت جدولة حذف الحساب'], 200);
+        return response(['message' => 'تمت جدولة حذف الحساب'], 200);
     }
 
 
