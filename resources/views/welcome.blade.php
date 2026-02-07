@@ -136,6 +136,7 @@
     </div>
 </section>
 
+
 <div class="centered-border"></div>
 <div class="container" dir="rtl">
     <div class="row">
@@ -274,6 +275,7 @@
 
 <section class="clients-two" dir="rtl">
     <div class="auto-container">
+
         <div class="sec-title title-anim centered">
             <h2 class="sec-title_heading">تابعـــونا</h2>
         </div>
@@ -302,7 +304,20 @@
                     </a>
                 </li>
             </ul>
+            <BR><BR>
+                <a href="https://apps.apple.com/sa/app/%D8%B3%D8%B9%D8%A7%D8%AF%D8%AA%D9%8A/id6756811972" class="btn btn-store" target="_blank">
+                <span class="fa fa-apple fa-3x pull-left"></span>
+                <span class="btn-label">حمل التطبيق</span>
+                <span class="btn-caption">App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.saadaty.app" class="btn btn-store" target="_blank">
+                <span class="fa fa-android fa-3x pull-left"></span>
+                <span class="btn-label">حمل التطبيق</span>
+                <span class="btn-caption">Google Play</span>
+            </a>
         </div>
     </div>
+
 </section>
+
 @endsection
