@@ -6,9 +6,9 @@
 		    <h2>نحو ليلة عمر خالدة … سعادتي ترافقك في كل التفاصيل</h2>
 		</div>
         <div class="about-one_button" style="text-align: center;">
-            <a href="{{ route('home') }}#contact" class="theme-btn btn-style-one">
+            <a href="https://linkly.link/2af9U" class="theme-btn btn-style-one" target="_blank">
                 <span class="btn-wrap">
-                    <span class="sub-text">تواصل معنا</span>
+                    <span class="sub-text">حمل التطبيق </span>
                 </span>
             </a>
         </div>
